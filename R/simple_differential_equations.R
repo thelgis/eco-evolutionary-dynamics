@@ -32,6 +32,7 @@ rm(list = ls())      # clean the history
 if (!require("deSolve", quietly = TRUE)) install.packages("deSolve")
 if (!require("WaveletComp", quietly = TRUE)) install.packages("WaveletComp")
 if (!require("pracma", quietly = TRUE)) install.packages("pracma")
+if (!require("ragg", quietly = TRUE)) install.packages("ragg")  # had to install for "tidyverse"
 if (!require("tidyverse", quietly = TRUE)) install.packages("tidyverse")
 if (!require("changepoint", quietly = TRUE)) install.packages("changepoint")
 if (!require("igraph", quietly = TRUE)) install.packages("igraph")
@@ -75,8 +76,6 @@ yini=c(H=1, P=0.1)
 ######################################################################################################
 # A. function -  Predator and Prey with no Evolution 
 ######################################################################################################
-
-library(deSolve)
 
 pp1 <- function(t, yini, parameters) {
   with(as.list(c(yini, parameters)), {
